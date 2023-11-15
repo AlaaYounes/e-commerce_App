@@ -1,14 +1,14 @@
 import 'package:e_commerce/colors.dart';
 import 'package:flutter/material.dart';
 
-class DefaultFormField extends StatelessWidget {
+class CustomFormField extends StatelessWidget {
   var controller = TextEditingController();
   String hintText;
   bool isPassword;
   TextInputType keyboardType;
   Widget? suffix;
 
-  DefaultFormField(
+  CustomFormField(
       {required this.controller,
       this.hintText = '',
       this.isPassword = false,

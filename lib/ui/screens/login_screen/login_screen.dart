@@ -1,6 +1,7 @@
 import 'package:e_commerce/colors.dart';
+import 'package:e_commerce/images.dart';
 import 'package:e_commerce/ui/screens/register_screen/register_screen.dart';
-import 'package:e_commerce/utils/defualt_form_field.dart';
+import 'package:e_commerce/utils/custom_form_field.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -34,7 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     margin: EdgeInsets.symmetric(
                         horizontal: MediaQuery.of(context).size.width * .237),
                     child: Image.asset(
-                      'assets/images/route.png',
+                      AppImages.routeLogo,
                       height: 100,
                     )),
                 SizedBox(
@@ -58,7 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(
                   height: 20,
                 ),
-                DefaultFormField(
+                CustomFormField(
                   controller: emailController,
                   hintText: 'enter your email',
                 ),
@@ -72,7 +73,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(
                   height: 20,
                 ),
-                DefaultFormField(
+                CustomFormField(
                   controller: passwordController,
                   keyboardType: TextInputType.visiblePassword,
                   hintText: 'enter your password',
@@ -117,7 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Don’t have an account?',
+                      'Don’t have an account ?',
                       style: Theme.of(context).textTheme.bodyMedium,
                     ),
                     TextButton(

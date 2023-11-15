@@ -1,6 +1,7 @@
 import 'package:e_commerce/colors.dart';
+import 'package:e_commerce/images.dart';
 import 'package:e_commerce/ui/screens/login_screen/login_screen.dart';
-import 'package:e_commerce/utils/defualt_form_field.dart';
+import 'package:e_commerce/utils/custom_form_field.dart';
 import 'package:flutter/material.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -34,7 +35,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     margin: EdgeInsets.symmetric(
                         horizontal: MediaQuery.of(context).size.width * .237),
                     child: Image.asset(
-                      'assets/images/route.png',
+                      AppImages.routeLogo,
                       height: 100,
                     )),
                 SizedBox(
@@ -47,7 +48,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 const SizedBox(
                   height: 20,
                 ),
-                DefaultFormField(
+                CustomFormField(
                   controller: emailController,
                   hintText: 'enter your full name',
                 ),
@@ -61,7 +62,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 const SizedBox(
                   height: 20,
                 ),
-                DefaultFormField(
+                CustomFormField(
                   controller: emailController,
                   hintText: 'enter your email',
                 ),
@@ -75,7 +76,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 const SizedBox(
                   height: 20,
                 ),
-                DefaultFormField(
+                CustomFormField(
                   controller: passwordController,
                   keyboardType: TextInputType.visiblePassword,
                   hintText: 'enter your password',
@@ -103,7 +104,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 const SizedBox(
                   height: 20,
                 ),
-                DefaultFormField(
+                CustomFormField(
                   controller: passwordController,
                   keyboardType: TextInputType.visiblePassword,
                   hintText: 'confirm your password',
@@ -131,7 +132,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 const SizedBox(
                   height: 20,
                 ),
-                DefaultFormField(
+                CustomFormField(
                   controller: emailController,
                   hintText: 'enter your mobile no.',
                 ),
@@ -162,7 +163,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Already have an account?',
+                      'Already have an account ?',
                       style: Theme.of(context).textTheme.bodyMedium,
                     ),
                     TextButton(
