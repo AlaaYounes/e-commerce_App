@@ -1,7 +1,7 @@
-import 'package:e_commerce/colors.dart';
-import 'package:e_commerce/images.dart';
 import 'package:e_commerce/ui/screens/register_screen/register_screen.dart';
-import 'package:e_commerce/utils/custom_form_field.dart';
+import 'package:e_commerce/utils/assets/colors.dart';
+import 'package:e_commerce/utils/assets/images.dart';
+import 'package:e_commerce/utils/components/custom_form_field.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -20,6 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColor.primaryColor,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(10),

@@ -1,4 +1,4 @@
-import 'package:e_commerce/colors.dart';
+import 'package:e_commerce/utils/assets/colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomFormField extends StatelessWidget {
