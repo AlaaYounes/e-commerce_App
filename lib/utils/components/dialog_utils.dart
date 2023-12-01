@@ -40,9 +40,7 @@ class DialogUtils {
               ),
               actions: [
                 TextButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
+                  onPressed: onPressed,
                   child: Text('ok'),
                 ),
               ],

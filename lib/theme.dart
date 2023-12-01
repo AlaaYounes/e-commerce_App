@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 class AppTheme {
   static ThemeData myTheme = ThemeData(
+    useMaterial3: false,
     scaffoldBackgroundColor: AppColor.whiteColor,
     canvasColor: AppColor.primaryColor,
     bottomAppBarTheme: BottomAppBarTheme(
@@ -32,7 +33,7 @@ class AppTheme {
       labelSmall: TextStyle(
         fontWeight: FontWeight.w400,
         fontSize: 14,
-        color: AppColor.primarydarkColor,
+        color: AppColor.primaryDarkColor,
       ),
       titleSmall: TextStyle(
         fontWeight: FontWeight.w500,
@@ -42,7 +43,7 @@ class AppTheme {
       titleMedium: TextStyle(
         fontSize: 20,
         fontWeight: FontWeight.w500,
-        color: AppColor.primarydarkColor,
+        color: AppColor.primaryDarkColor,
       ),
     ),
     dividerTheme: DividerThemeData(color: AppColor.primaryColor),

@@ -35,7 +35,7 @@ class ProductFavItem extends StatelessWidget {
                         style: Theme.of(context)
                             .textTheme
                             .titleSmall!
-                            .copyWith(color: AppColor.primarydarkColor),
+                            .copyWith(color: AppColor.primaryDarkColor),
                         overflow: TextOverflow.ellipsis,
                         maxLines: 2,
                       ),
@@ -47,7 +47,7 @@ class ProductFavItem extends StatelessWidget {
                         style: Theme.of(context)
                             .textTheme
                             .titleSmall!
-                            .copyWith(color: AppColor.primarydarkColor),
+                            .copyWith(color: AppColor.primaryDarkColor),
                       ),
                       const SizedBox(
                         height: 10,

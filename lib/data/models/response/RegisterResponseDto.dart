@@ -7,14 +7,14 @@ class RegisterResponseDto extends RegisterResponseEntity {
     super.message,
     super.user,
     super.token,
-    super.statusMsg,
     super.errors,
+    super.statusMsg,
   });
 
   RegisterResponseDto.fromJson(dynamic json) {
     message = json['message'];
     statusMsg = json['statusMsg'];
-    user = json['user'] != null ? User.fromJson(json['user']) : null;
+    user = json['user'] != null ? UserDto.fromJson(json['user']) : null;
     errors = json['errors'] != null ? Errors.fromJson(json['errors']) : null;
     token = json['token'];
   }
@@ -26,8 +26,11 @@ class RegisterResponseDto extends RegisterResponseEntity {
     if (user != null) {
       map['user'] = user?.toJson();
     }
-    map['errors'] = errors?.toJson();
+    if (errors != null) {
+      map['errors'] = errors?.toJson();
+    }
     map['token'] = token;
+
     return map;
   }
 }

@@ -14,17 +14,15 @@ class LoginScreenCubit extends Cubit<LoginScreenStates> {
 
   Future<void> login() async {
     emit(LoginLoadingState(loadingMessage: 'Loading...'));
-    try {
-      var response = await loginUseCase!.invoke(
-        emailController.text,
-        passwordController.text,
-      );
-      if (response.message != 'success') {
-        emit(LoginErrorState(errorMessage: response.message!));
-      }
-      emit(LoginSuccessState(response: response));
-    } catch (e) {
-      emit(LoginErrorState(errorMessage: e.toString()));
-    }
+    var response = await loginUseCase!.invoke(
+      emailController.text,
+      passwordController.text,
+    );
+    response.fold((l) {
+      emit(LoginErrorState(errorMessage: l.errorMessage!));
+    }, (r) {
+      emit(LoginSuccessState(response: r));
+      print(r.message);
+    });
   }
 }

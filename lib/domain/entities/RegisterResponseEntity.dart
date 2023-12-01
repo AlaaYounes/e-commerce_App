@@ -6,13 +6,13 @@ class RegisterResponseEntity {
     this.message,
     this.user,
     this.token,
-    this.statusMsg,
     this.errors,
+    this.statusMsg,
   });
 
   String? message;
-  User? user;
+  UserDto? user;
+  Errors? errors;
   String? token;
   String? statusMsg;
-  Errors? errors;
 }

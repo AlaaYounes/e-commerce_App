@@ -17,25 +17,17 @@ class RegisterScreenCubit extends Cubit<RegisterScreenStates> {
 
   Future<void> register() async {
     emit(RegisterLoadingState(loadingMessage: 'Loading...'));
-    try {
-      var response = await registerUseCase!.invoke(
-          nameController.text,
-          emailController.text,
-          passwordController.text,
-          rePasswordController.text,
-          phoneController.text);
-      if (response.message != 'success') {
-        if (response.message == 'fail') {
-          print(response.errors!.msg);
-          emit(RegisterErrorState(errorMessage: response.errors!.msg!));
-          print(response.errors!.msg);
-        } else {
-          emit(RegisterErrorState(errorMessage: response.message!));
-        }
-      }
-      emit(RegisterSuccessState(response: response));
-    } catch (e) {
-      emit(RegisterErrorState(errorMessage: e.toString()));
-    }
+
+    var response = await registerUseCase!.invoke(
+        nameController.text,
+        emailController.text,
+        passwordController.text,
+        rePasswordController.text,
+        phoneController.text);
+    response.fold((l) {
+      emit(RegisterErrorState(errorMessage: l.errorMessage!));
+    }, (r) {
+      emit(RegisterSuccessState(response: r));
+    });
   }
 }

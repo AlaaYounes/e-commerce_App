@@ -6,17 +6,19 @@ class LoginResponseDto extends LoginResponseEntity {
     super.message,
     super.user,
     super.token,
+    super.statusMsg,
   });
 
   LoginResponseDto.fromJson(dynamic json) {
     message = json['message'];
-    user = json['user'] != null ? User.fromJson(json['user']) : null;
+    statusMsg = json['statusMsg'];
+    user = json['user'] != null ? UserDto.fromJson(json['user']) : null;
     token = json['token'];
   }
-
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     map['message'] = message;
+    map['statusMsg'] = statusMsg;
     if (user != null) {
       map['user'] = user?.toJson();
     }

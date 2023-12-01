@@ -5,9 +5,11 @@ class LoginResponseEntity {
     this.message,
     this.user,
     this.token,
+    this.statusMsg,
   });
 
   String? message;
-  User? user;
+  UserDto? user;
   String? token;
+  String? statusMsg;
 }

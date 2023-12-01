@@ -1,19 +1,17 @@
-class User {
-  User({
-    this.name,
-    this.email,
-    this.role,
+import 'package:e_commerce/domain/entities/UserEntity.dart';
+
+class UserDto extends UserEntity {
+  UserDto({
+    super.name,
+    super.email,
+    super.role,
   });
 
-  User.fromJson(dynamic json) {
+  UserDto.fromJson(dynamic json) {
     name = json['name'];
     email = json['email'];
     role = json['role'];
   }
-
-  String? name;
-  String? email;
-  String? role;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};

@@ -22,22 +22,32 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<LoginScreenCubit, LoginScreenStates>(
+    return BlocListener<LoginScreenCubit, LoginScreenStates>(
       bloc: viewModel,
       listener: (context, state) {
         if (state is LoginLoadingState) {
           DialogUtils.showLoading(context);
         } else if (state is LoginErrorState) {
           DialogUtils.hideLoading(context);
-          DialogUtils.showMessage(context, state.errorMessage!, () {});
+          DialogUtils.showMessage(context, state.errorMessage!, () {
+            Navigator.pop(context);
+          });
         } else if (state is LoginSuccessState) {
           DialogUtils.hideLoading(context);
-          DialogUtils.showMessage(context, state.response.user!.name, () {});
+          DialogUtils.showMessage(context, state.response.user?.name ?? '', () {
+            Navigator.pop(context);
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => AppLayout(),
+              ),
+            );
+          });
         } else {
           Container();
         }
       },
-      builder: (context, state) => Scaffold(
+      child: Scaffold(
         backgroundColor: AppColor.primaryColor,
         body: SingleChildScrollView(
           child: Padding(
@@ -116,12 +126,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   InkWell(
                     onTap: () {
                       viewModel.login();
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => AppLayout(),
-                        ),
-                      );
                     },
                     child: Container(
                       alignment: Alignment.center,
@@ -153,7 +157,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => RegisterScreen(),
+                              builder: (context) => const RegisterScreen(),
                             ),
                           );
                         },

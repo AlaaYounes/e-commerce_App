@@ -32,7 +32,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           DialogUtils.showMessage(context, state.errorMessage!, () {});
         } else if (state is RegisterSuccessState) {
           DialogUtils.hideLoading(context);
-          DialogUtils.showMessage(context, state.response.message!, () {});
+          DialogUtils.showMessage(context, state.response.token, () {});
         } else {
           Container();
         }
