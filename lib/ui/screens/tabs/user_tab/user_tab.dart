@@ -27,7 +27,7 @@ class UserTab extends StatelessWidget {
         Container(
           width: context.w(398),
           height: context.h(54),
-          padding: EdgeInsets.symmetric(horizontal: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           alignment: Alignment.centerLeft,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
@@ -54,7 +54,7 @@ class UserTab extends StatelessWidget {
         Container(
           width: context.w(398),
           height: context.h(54),
-          padding: EdgeInsets.symmetric(horizontal: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           alignment: Alignment.centerLeft,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
@@ -81,7 +81,7 @@ class UserTab extends StatelessWidget {
         Container(
           width: context.w(398),
           height: context.h(54),
-          padding: EdgeInsets.symmetric(horizontal: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           alignment: Alignment.centerLeft,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
@@ -108,7 +108,7 @@ class UserTab extends StatelessWidget {
         Container(
           width: context.w(398),
           height: context.h(54),
-          padding: EdgeInsets.symmetric(horizontal: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           alignment: Alignment.centerLeft,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
@@ -135,7 +135,7 @@ class UserTab extends StatelessWidget {
         Container(
           width: context.w(398),
           height: context.h(54),
-          padding: EdgeInsets.symmetric(horizontal: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           alignment: Alignment.centerLeft,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),

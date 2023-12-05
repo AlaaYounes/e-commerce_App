@@ -8,7 +8,7 @@ class FavouriteTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-        itemBuilder: (context, index) => ProductFavItem(),
+        itemBuilder: (context, index) => const ProductFavItem(),
         separatorBuilder: (context, index) => SizedBox(height: context.h(10)),
         itemCount: 10);
   }

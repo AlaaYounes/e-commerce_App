@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:e_commerce/data/api/base_error.dart';
-import 'package:e_commerce/domain/entities/LoginResponseEntity.dart';
-import 'package:e_commerce/domain/entities/RegisterResponseEntity.dart';
+import 'package:e_commerce/domain/entities/authentication/LoginResponseEntity.dart';
+import 'package:e_commerce/domain/entities/authentication/RegisterResponseEntity.dart';
 
 abstract class AuthRemoteDataSource {
   Future<Either<BaseError, RegisterResponseEntity>> register(String name,

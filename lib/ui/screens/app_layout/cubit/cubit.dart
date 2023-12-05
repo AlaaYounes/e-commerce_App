@@ -13,8 +13,8 @@ class AppLayoutCubit extends Cubit<AppStates> {
   List<Widget> tabsList = [
     HomeTab(),
     ProductTab(),
-    FavouriteTab(),
-    UserTab(),
+    const FavouriteTab(),
+    const UserTab(),
   ];
 
   void changeBottomNavItem(int index) {

@@ -1,4 +1,4 @@
-import 'package:e_commerce/domain/entities/RegisterResponseEntity.dart';
+import 'package:e_commerce/domain/entities/authentication/RegisterResponseEntity.dart';
 
 class RegisterScreenStates {}
 

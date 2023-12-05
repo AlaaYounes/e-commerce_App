@@ -1,4 +1,4 @@
-import 'package:e_commerce/domain/entities/UserEntity.dart';
+import 'package:e_commerce/domain/entities/authentication/UserEntity.dart';
 
 class UserDto extends UserEntity {
   UserDto({

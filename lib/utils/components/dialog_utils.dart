@@ -13,7 +13,7 @@ class DialogUtils {
             CircularProgressIndicator(
               color: AppColor.primaryColor,
             ),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
             Text(
@@ -41,7 +41,7 @@ class DialogUtils {
               actions: [
                 TextButton(
                   onPressed: onPressed,
-                  child: Text('ok'),
+                  child: const Text('ok'),
                 ),
               ],
             ));

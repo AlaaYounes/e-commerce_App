@@ -4,6 +4,12 @@ import 'package:flutter/material.dart';
 class AppTheme {
   static ThemeData myTheme = ThemeData(
     useMaterial3: false,
+    appBarTheme: AppBarTheme(
+        color: Colors.transparent,
+        elevation: 0,
+        iconTheme: IconThemeData(
+          color: AppColor.primaryDarkColor,
+        )),
     scaffoldBackgroundColor: AppColor.whiteColor,
     canvasColor: AppColor.primaryColor,
     bottomAppBarTheme: BottomAppBarTheme(

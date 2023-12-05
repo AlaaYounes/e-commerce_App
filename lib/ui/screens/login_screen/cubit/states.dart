@@ -1,4 +1,4 @@
-import 'package:e_commerce/domain/entities/LoginResponseEntity.dart';
+import 'package:e_commerce/domain/entities/authentication/LoginResponseEntity.dart';
 
 class LoginScreenStates {}
 

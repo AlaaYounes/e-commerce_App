@@ -1,7 +1,10 @@
+import 'package:e_commerce/domain/entities/category/CategoryResponseEntity.dart';
 import 'package:flutter/material.dart';
 
 class CategoryWidget extends StatelessWidget {
-  const CategoryWidget({super.key});
+  CategoryEntity category;
+
+  CategoryWidget({required this.category});
 
   @override
   Widget build(BuildContext context) {
@@ -9,18 +12,19 @@ class CategoryWidget extends StatelessWidget {
       children: [
         Expanded(
           child: CircleAvatar(
-            radius: 50,
-            child: Image.asset(
-              'assets/images/category.png',
+            backgroundImage: NetworkImage(
+              category.image ?? '',
             ),
+            radius: 40,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 2,
         ),
         Text(
-          'Fashion',
+          category.name ?? '',
           style: Theme.of(context).textTheme.labelSmall,
+          overflow: TextOverflow.ellipsis,
         ),
       ],
     );

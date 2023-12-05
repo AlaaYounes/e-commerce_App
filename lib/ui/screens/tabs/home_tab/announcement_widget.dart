@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 class AnnouncementWidget extends StatelessWidget {
   int index;
 
-  AnnouncementWidget({required this.index});
+  AnnouncementWidget({super.key, required this.index});
 
   @override
   Widget build(BuildContext context) {

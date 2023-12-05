@@ -29,7 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
           DialogUtils.showLoading(context);
         } else if (state is LoginErrorState) {
           DialogUtils.hideLoading(context);
-          DialogUtils.showMessage(context, state.errorMessage!, () {
+          DialogUtils.showMessage(context, state.errorMessage, () {
             Navigator.pop(context);
           });
         } else if (state is LoginSuccessState) {
@@ -39,7 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (context) => AppLayout(),
+                builder: (context) => const AppLayout(),
               ),
             );
           });

@@ -22,7 +22,6 @@ class LoginScreenCubit extends Cubit<LoginScreenStates> {
       emit(LoginErrorState(errorMessage: l.errorMessage!));
     }, (r) {
       emit(LoginSuccessState(response: r));
-      print(r.message);
     });
   }
 }

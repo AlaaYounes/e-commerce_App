@@ -9,7 +9,8 @@ class CustomFormField extends StatelessWidget {
   Widget? suffix;
 
   CustomFormField(
-      {required this.controller,
+      {super.key,
+      required this.controller,
       this.hintText = '',
       this.isPassword = false,
       this.keyboardType = TextInputType.text,

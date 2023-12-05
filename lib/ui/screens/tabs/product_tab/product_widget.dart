@@ -1,18 +1,21 @@
+import 'package:e_commerce/domain/entities/products/ProductResponseEntity.dart';
 import 'package:e_commerce/utils/assets/colors.dart';
 import 'package:e_commerce/utils/assets/images.dart';
 import 'package:e_commerce/utils/extensions/extensions.dart';
 import 'package:flutter/material.dart';
 
 class ProductWidget extends StatelessWidget {
-  const ProductWidget({super.key});
+  ProductEntity product;
+
+  ProductWidget({required this.product});
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Container(
-          width: context.w(190),
-          height: context.h(240),
+          width: context.w(291),
+          height: context.h(300),
           padding: const EdgeInsets.symmetric(horizontal: 10),
           decoration: BoxDecoration(
             border: Border.all(
@@ -20,58 +23,62 @@ class ProductWidget extends StatelessWidget {
             ),
             borderRadius: BorderRadius.circular(10),
           ),
-          child: Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(child: Image.asset('assets/images/shoes.png')),
-                const SizedBox(
-                  height: 10,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Flexible(
+                child: Image.network(
+                  product.imageCover!,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
                 ),
-                Text(
-                  'Nike Air Jordon Nike shoes flexible for wo..',
-                  style: Theme.of(context).textTheme.labelSmall,
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 2,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  'EGP 1,200 ',
-                  style: Theme.of(context)
-                      .textTheme
-                      .labelSmall!
-                      .copyWith(fontWeight: FontWeight.w500),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Reviews (4.6)',
-                      style: Theme.of(context).textTheme.labelSmall,
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 2,
-                    ),
-                    Icon(
-                      Icons.star,
-                      color: Colors.yellow,
-                      size: 15,
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-              ],
-            ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Text(
+                product.title!,
+                style: Theme.of(context).textTheme.labelSmall,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 2,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Text(
+                '${product.price} EGP',
+                style: Theme.of(context)
+                    .textTheme
+                    .labelSmall!
+                    .copyWith(fontWeight: FontWeight.w500),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Reviews (${product.ratingsAverage})',
+                    style: Theme.of(context).textTheme.labelSmall,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 2,
+                  ),
+                  const Icon(
+                    Icons.star,
+                    color: Colors.yellow,
+                    size: 15,
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+            ],
           ),
         ),
-        Padding(
+        const Padding(
           padding: EdgeInsets.only(right: 10, top: 10),
           child: Align(
             alignment: Alignment.topRight,
@@ -81,7 +88,7 @@ class ProductWidget extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(right: 10, bottom: 10),
+          padding: const EdgeInsets.only(right: 10, bottom: 10),
           child: Align(
             alignment: Alignment.bottomRight,
             child: InkWell(

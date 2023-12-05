@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:e_commerce/data/api/base_error.dart';
-import 'package:e_commerce/domain/entities/LoginResponseEntity.dart';
+import 'package:e_commerce/domain/entities/authentication/LoginResponseEntity.dart';
 import 'package:e_commerce/domain/repository/authentication/auth_repository_contract.dart';
 
 class LoginUseCase {

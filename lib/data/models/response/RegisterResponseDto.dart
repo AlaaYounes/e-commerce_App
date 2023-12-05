@@ -1,6 +1,6 @@
 import 'package:e_commerce/data/models/response/Errors.dart';
 import 'package:e_commerce/data/models/response/User.dart';
-import 'package:e_commerce/domain/entities/RegisterResponseEntity.dart';
+import 'package:e_commerce/domain/entities/authentication/RegisterResponseEntity.dart';
 
 class RegisterResponseDto extends RegisterResponseEntity {
   RegisterResponseDto({
