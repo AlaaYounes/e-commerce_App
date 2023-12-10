@@ -18,6 +18,7 @@ import 'package:e_commerce/domain/useCase/category/get_category_useCase.dart';
 import 'package:e_commerce/domain/useCase/category/get_subCategory_useCase.dart';
 import 'package:e_commerce/domain/useCase/products/get_all_products_by_categoryId.dart';
 import 'package:e_commerce/domain/useCase/products/get_all_products_useCase.dart';
+import 'package:e_commerce/domain/useCase/products/get_product_by_id_useCase.dart';
 
 AuthRepositoryContract injectAuthRepositoryContract() {
   return AuthRepositoryImpl(remoteDataSource: injectAuthRemoteDataSource());
@@ -75,5 +76,10 @@ GetAllProductsUseCase injectGetAllProductsUseCase() {
 
 GetAllProductsByCategoryIdUseCase injectGetAllProductsByCategoryIdUseCase() {
   return GetAllProductsByCategoryIdUseCase(
+      repositoryContract: injectProductRepositoryContract());
+}
+
+GetProductByIdUseCase injectGetProductByIdUseCase() {
+  return GetProductByIdUseCase(
       repositoryContract: injectProductRepositoryContract());
 }

@@ -8,6 +8,7 @@ import 'package:e_commerce/data/models/request/LoginRequest.dart';
 import 'package:e_commerce/data/models/request/RegisterRequest.dart';
 import 'package:e_commerce/data/models/response/CategoryResponseDto.dart';
 import 'package:e_commerce/data/models/response/LoginResponseDto.dart';
+import 'package:e_commerce/data/models/response/ProductDetailsDto.dart';
 import 'package:e_commerce/data/models/response/ProductResponseDto.dart';
 import 'package:e_commerce/data/models/response/RegisterResponseDto.dart';
 import 'package:http/http.dart' as http;
@@ -164,6 +165,25 @@ class ApiManager {
       Uri url = Uri.https(ApiConstants.baseUrl, ApiConstants.allProductsApi);
       var responseBody = await http.get(url);
       var response = ProductResponseDto.fromJson(jsonDecode(responseBody.body));
+      if (responseBody.statusCode == 200) {
+        return Right(response);
+      } else {
+        return Left(BaseError(errorMessage: 'something went wrong'));
+      }
+    } else {
+      return Left(BaseError(errorMessage: 'check internet connection. '));
+    }
+  }
+
+  Future<Either<BaseError, ProductDetailsDto>> getProductById(
+      String productId) async {
+    final connectivityResult = await (Connectivity().checkConnectivity());
+    if (connectivityResult == ConnectivityResult.mobile ||
+        connectivityResult == ConnectivityResult.wifi) {
+      Uri url = Uri.https(ApiConstants.baseUrl,
+          '${ApiConstants.specificProductApi}/$productId');
+      var responseBody = await http.get(url);
+      var response = ProductDetailsDto.fromJson(jsonDecode(responseBody.body));
       if (responseBody.statusCode == 200) {
         return Right(response);
       } else {

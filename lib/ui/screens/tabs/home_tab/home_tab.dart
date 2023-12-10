@@ -1,10 +1,10 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:e_commerce/domain/injection.dart';
 import 'package:e_commerce/ui/screens/tabs/home_tab/announcement_widget.dart';
-import 'package:e_commerce/ui/screens/tabs/home_tab/categoryWidget.dart';
+import 'package:e_commerce/ui/screens/tabs/home_tab/category/categoryWidget.dart';
 import 'package:e_commerce/ui/screens/tabs/home_tab/cubit/cubit.dart';
 import 'package:e_commerce/ui/screens/tabs/home_tab/cubit/states.dart';
-import 'package:e_commerce/ui/screens/tabs/product_tab/product_container.dart';
+import 'package:e_commerce/ui/screens/tabs/product_tab/product/product_container.dart';
 import 'package:e_commerce/utils/extensions/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -70,8 +70,10 @@ class HomeTab extends StatelessWidget {
                               context,
                               MaterialPageRoute(
                                   builder: (context) => ProductContainer(
-                                        categoryId:
+                                    categoryId:
                                             viewModel.categoriesList[index].id!,
+                                        categoryTitle: viewModel
+                                            .categoriesList[index].name!,
                                       )),
                             );
                           },

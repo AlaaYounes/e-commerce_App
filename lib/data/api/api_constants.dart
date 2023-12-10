@@ -5,4 +5,5 @@ class ApiConstants {
   static String categoryApi = '/api/v1/categories';
   static String brandApi = '/api/v1/brands';
   static String allProductsApi = '/api/v1/products';
+  static String specificProductApi = '/api/v1/products';
 }

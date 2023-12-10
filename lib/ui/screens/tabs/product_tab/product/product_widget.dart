@@ -26,7 +26,7 @@ class ProductWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Flexible(
+              Expanded(
                 child: Image.network(
                   product.imageCover!,
                   width: double.infinity,

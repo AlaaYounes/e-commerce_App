@@ -15,3 +15,9 @@ class ProductSuccessState extends ProductTabStates {
 
   ProductSuccessState({required this.productsList});
 }
+
+class ProductAddState extends ProductTabStates {}
+
+class ProductMinusState extends ProductTabStates {}
+
+class ProductIdSuccessState extends ProductTabStates {}
