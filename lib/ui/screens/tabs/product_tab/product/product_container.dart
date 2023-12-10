@@ -31,8 +31,8 @@ class ProductContainer extends StatelessWidget {
               centerTitle: true,
             ),
             body: viewModel.productsList.isEmpty
-                ? Center(
-                    child: const Center(child: CircularProgressIndicator()),
+                ? const Center(
+                    child: CircularProgressIndicator(),
                   )
                 : Padding(
                     padding: EdgeInsets.symmetric(

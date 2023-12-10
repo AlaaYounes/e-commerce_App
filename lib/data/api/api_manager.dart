@@ -12,7 +12,6 @@ import 'package:e_commerce/data/models/response/ProductDetailsDto.dart';
 import 'package:e_commerce/data/models/response/ProductResponseDto.dart';
 import 'package:e_commerce/data/models/response/RegisterResponseDto.dart';
 import 'package:http/http.dart' as http;
-
 class ApiManager {
   ApiManager._();
 
